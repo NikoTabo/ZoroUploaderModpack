@@ -31,7 +31,7 @@ public class ServerManager {
     }
 
     private boolean canStartServer() {
-        String raw = Config.PATH_UPLOAD.get();
+        String raw = Config.PATH_UPLOAD.get().concat("/modpack");
 
         Path path = Paths.get(raw);
 

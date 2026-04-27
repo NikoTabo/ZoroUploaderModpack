@@ -30,6 +30,7 @@ public class TcpServer extends Thread{
     public void run(){
         try {
             socket = new ServerSocket(port);
+            ZoroUploader.LOGGER.info("Сервер стартанул!");
             while (running) {
                 try {
                     Socket client = socket.accept();
@@ -81,7 +82,7 @@ public class TcpServer extends Thread{
             ZoroUploader.LOGGER.error(e.getMessage());
         } catch (IOException e) {
             ZoroUploader.LOGGER.warn(e.getMessage());
-            manifest = ManifestUtils.createManifest(path, "2.0");
+            manifest = ManifestUtils.createManifest(path, "2.2(neo)");
         }
         return manifest;
     }
